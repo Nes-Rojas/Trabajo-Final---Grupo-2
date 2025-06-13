@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo 2 - Trabajo Final</title>
+
+  <!-- Enlaces de estilos y fuentes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="Styles_TF.css" />
+</head>
+
+<body>
+    <!-- Header -->
+  <header>
+    <nav class="navbar section-content">
+      <a href="#" class="nav-logo">
+        <h2 class="logo-text">GRUPO 2</h2>
+      </a>
+      <ul class="nav-menu">
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="#comprimir" class="nav-link">Compresión</a></li>
+        <li class="nav-item"><a href="#descomprimir" class="nav-link">Descompresión</a></li>
+        <li class="nav-item"><a href="#nosotros" class="nav-link">Nosotros</a></li>
+      </ul>
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
+
+  <main>
+
+        <!-- Hero Sección -->
+    <section class="hero-section" id="inicio">
+      <div class="section-content">
+        <div class="hero-details">
+          <h2 class="title">Algoritmo de Huffman</h2>
+          <h3 class="subtitle">Optimiza, Comprime y Descomprime</h3>
+          <p class="description">
+            Reduce la cantidad de bits necesarios para almacenar datos, asignando códigos más cortos a los caracteres más frecuentes. Sin pérdida de información, sin códigos repetidos y sin ambigüedad: cada símbolo tiene un código único.
+          </p>
+
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="images/Huffman.png" alt="Ilustración Huffman" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Compresión -->
+    <section class="compression-section" id="comprimir">
+      <div class="section-content">
+        <div class="compression-details">
+          <h2 class="compression-title">Compresión</h2>
+          <p class="text">¿Directamente desde la Web?</p>
+          
+          <!-- Caja de texto para comprimir directamente -->
+          <textarea id="textoManual" placeholder="Introduce el texto que quieres comprimir." rows="8"></textarea>
+
+          <!-- Input de archivo centrado con texto -->
+          <div class="input-group">
+            <p class="text">O selecciona un archivo de texto (.txt)</p>
+            <input type="file" id="archivoEntrada" accept=".txt" class="archivo-input" />
+          </div>
+
+          <!-- Boton de Comprimir -->
+          <div class="button-wrapper">
+            <button onclick="comprimirDesdeEntrada()" class="submit-button">Comprimir</button>
+          </div>
+
+          <!-- Cuadros de resultado y tabla -->
+          <div class="resultado-codificacion-wrapper">
+            <div class="output-box">
+              <h3 class="output-title">Resultado de Codificación</h3>
+              <pre id="resultadoCodificacion" class="output-text" readonly></pre>
+            </div>
+            <div class="output-box">
+              <h3 class="output-title">Tabla de Códigos</h3>
+              <pre id="tablaCodigos" class="output-text" readonly></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Descompresión -->
+    <section class="descompression-section" id="descomprimir">
+      <div class="section-content">
+        <div class="descompression-details">
+          <h2 class="descompression-title">Descompresión</h2>
+
+          <div class="input-group">
+            <p class="text">Adjunte el archivo comprimido</p>
+            <input type="file" id="archivoComprimido" class="archivo-input" />
+          </div>
+
+          <div class="input-group">
+            <p class="text">Adjunte la tabla de codificación</p>
+            <input type="file" id="archivoTabla" class="archivo-input" />
+          </div>
+
+          <div class="button-wrapper descompresion-boton">
+            <button onclick="descomprimir()" class="submit-button">Descomprimir</button>
+          </div>
+
+          <div class="compression-results">
+            <div class="result-box">
+              <h3>Resultado de Descompresión</h3>
+              <pre id="resultadoDescompresion"></pre>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Integrantes -->
+    <section class="integrantes-section" id="nosotros">
+      <h2 class="section-title integrantes-title">¿Quiénes somos?</h2>
+      <div class="section-content">
+        <ul class="integrantes-list">
+          <li class="integrante-item">
+            <img src="images/Integrantes Genericos.png" alt="Integrante 1" class="integrante-image">
+            <h3 class="name">Nestor Rojas Tello</h3>
+            <p class="text">U202317099</p>
+          </li>
+          <li class="integrante-item">
+            <img src="images/Integrantes Genericos.png" alt="Integrante 2" class="integrante-image">
+            <h3 class="name">Renzo Sandoval Asurza</h3>
+            <p class="text">U201713928</p>
+          </li>
+          <li class="integrante-item">
+            <img src="images/Integrantes Genericos.png" alt="Integrante 3" class="integrante-image">
+            <h3 class="name">Luis Cordova Arias</h3>
+            <p class="text">U202311318</p>
+          </li>
+          <li class="integrante-item">
+            <img src="images/Integrantes Genericos.png" alt="Integrante 4" class="integrante-image">
+            <h3 class="name">Yazid Said Conde</h3>
+            <p class="text">U202312348</p>
+          </li>
+          <li class="integrante-item">
+            <img src="images/Integrantes Genericos.png" alt="Integrante 5" class="integrante-image">
+            <h3 class="name">Mario Paredes Ayasca</h3>
+            <p class="text">U202213673</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- Aquí puedes mantener el script de Huffman si aún no lo vas a separar -->
+  <script src="Scripts_TF.js"></script>
+</body>
+</html>
+
+
